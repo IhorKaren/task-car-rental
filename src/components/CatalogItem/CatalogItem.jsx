@@ -53,15 +53,28 @@ const CatalogItem = ({ el }) => {
             </CardTitle>
             <p>{el.rentalPrice}</p>
           </TitleThumb>
-
           <TagList>
-            <TagItem>{city}</TagItem>
-            <TagItem>{country}</TagItem>
-            <TagItem>{el.rentalCompany}</TagItem>
-            <TagItem>{el.type}</TagItem>
-            <TagItem>{el.make}</TagItem>
-            <TagItem>{el.mileage}</TagItem>
-            <TagItem>{el.accessories[2]}</TagItem>
+            <TagItem>
+              <p>{city}</p>
+            </TagItem>
+            <TagItem>
+              <p>{country}</p>
+            </TagItem>
+            <TagItem>
+              <p> {el.rentalCompany}</p>
+            </TagItem>
+            <TagItem>
+              <p>{el.type}</p>
+            </TagItem>
+            <TagItem>
+              <p>{el.make}</p>
+            </TagItem>
+            <TagItem>
+              <p>{el.mileage}</p>
+            </TagItem>
+            <TagItem>
+              <p>{el.accessories[2]}</p>
+            </TagItem>
           </TagList>
         </div>
         <Button type="button" onClick={openModal}>
@@ -70,7 +83,7 @@ const CatalogItem = ({ el }) => {
       </Card>
       {isModalOpen && (
         <PageModal closeModal={closeModal}>
-          <CatalogItemModal el={el} />
+          <CatalogItemModal el={el} city={city} country={country} />
         </PageModal>
       )}
     </>

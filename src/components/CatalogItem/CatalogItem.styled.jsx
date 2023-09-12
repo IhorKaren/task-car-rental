@@ -60,6 +60,7 @@ export const TagItem = styled.li`
   &:not(:last-child)::after {
     content: '';
     position: absolute;
+    top: 0;
     right: -6px;
     height: 14px;
     border: 1px solid rgba(18, 20, 23, 0.1);
