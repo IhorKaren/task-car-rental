@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/task-car-rental/static/css/main.fecf0cb1.css",
-    "main.js": "/task-car-rental/static/js/main.cdf3f1d1.js",
-    "static/js/765.8048e69e.chunk.js": "/task-car-rental/static/js/765.8048e69e.chunk.js",
+    "main.js": "/task-car-rental/static/js/main.a9dcbf3c.js",
+    "static/js/765.d02b2675.chunk.js": "/task-car-rental/static/js/765.d02b2675.chunk.js",
     "static/js/427.6634b174.chunk.js": "/task-car-rental/static/js/427.6634b174.chunk.js",
-    "static/js/950.aaa44025.chunk.js": "/task-car-rental/static/js/950.aaa44025.chunk.js",
+    "static/js/925.72fdd819.chunk.js": "/task-car-rental/static/js/925.72fdd819.chunk.js",
     "index.html": "/task-car-rental/index.html",
     "main.fecf0cb1.css.map": "/task-car-rental/static/css/main.fecf0cb1.css.map",
-    "main.cdf3f1d1.js.map": "/task-car-rental/static/js/main.cdf3f1d1.js.map",
-    "765.8048e69e.chunk.js.map": "/task-car-rental/static/js/765.8048e69e.chunk.js.map",
+    "main.a9dcbf3c.js.map": "/task-car-rental/static/js/main.a9dcbf3c.js.map",
+    "765.d02b2675.chunk.js.map": "/task-car-rental/static/js/765.d02b2675.chunk.js.map",
     "427.6634b174.chunk.js.map": "/task-car-rental/static/js/427.6634b174.chunk.js.map",
-    "950.aaa44025.chunk.js.map": "/task-car-rental/static/js/950.aaa44025.chunk.js.map"
+    "925.72fdd819.chunk.js.map": "/task-car-rental/static/js/925.72fdd819.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fecf0cb1.css",
-    "static/js/main.cdf3f1d1.js"
+    "static/js/main.a9dcbf3c.js"
   ]
 }
