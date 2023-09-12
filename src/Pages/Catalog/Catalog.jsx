@@ -1,4 +1,5 @@
 import { useGetCarsQuery } from 'redux/cars/carsApi';
+import CatalogList from 'components/CatalogList/CatalogList';
 
 const Catalog = () => {
   const { data = [] } = useGetCarsQuery();
@@ -7,8 +8,8 @@ const Catalog = () => {
 
   return (
     <>
-      {/* {loading && <Loader />} */}
       <h1>Catalog</h1>
+      <CatalogList data={data} />
     </>
   );
 };
