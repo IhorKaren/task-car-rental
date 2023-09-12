@@ -83,7 +83,12 @@ const CatalogItem = ({ el }) => {
       </Card>
       {isModalOpen && (
         <PageModal closeModal={closeModal}>
-          <CatalogItemModal el={el} city={city} country={country} />
+          <CatalogItemModal
+            el={el}
+            city={city}
+            country={country}
+            closeModal={closeModal}
+          />
         </PageModal>
       )}
     </>

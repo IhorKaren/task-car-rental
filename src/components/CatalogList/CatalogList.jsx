@@ -3,7 +3,9 @@ import { List } from './CatalogList.styled';
 
 const CatalogList = ({ data }) => {
   return (
-    <List>{data && data.map(el => <CatalogItem key={el.id} el={el} />)}</List>
+    <List className="CarsList">
+      {data && data.map(el => <CatalogItem key={el.id} el={el} />)}
+    </List>
   );
 };
 

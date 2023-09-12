@@ -1,56 +1,89 @@
 import {
   Container,
+  CloseModal,
+  CloseIcon,
   ModalImage,
-  CardTitle,
+  Thumb,
+  ModalTitle,
   Accent,
   TagList,
   TagItem,
+  Decription,
+  Text,
+  ConditionList,
+  ConditionItem,
   Button,
 } from '../CatalogItemModal/CatalogItemModal.styled';
-const CatalogItemModal = ({ el, city, country }) => {
+
+const CatalogItemModal = ({ el, city, country, closeModal }) => {
+  const rentalConditions = el.rentalConditions.split('\n');
+
   return (
     <Container>
+      <CloseModal
+        type="button"
+        onClick={closeModal}
+        aria-label="Close modal window"
+      >
+        <CloseIcon />
+      </CloseModal>
       <ModalImage src={el.img} />
-      <CardTitle>
+      <ModalTitle>
         {el.make} <Accent>{el.model}</Accent>, {el.year}
-      </CardTitle>
-      <TagList>
-        <TagItem>
-          <p>{city}</p>
-        </TagItem>
-        <TagItem>
-          <p>{country}</p>
-        </TagItem>
-        <TagItem>
-          <p>id: {el.id}</p>
-        </TagItem>
-        <TagItem>
-          <p>Year: {el.year}</p>
-        </TagItem>
-        <TagItem>
-          <p>Type: {el.type}</p>
-        </TagItem>
-        <TagItem>
-          <p>Fuel Consumption: {el.fuelConsumption}</p>
-        </TagItem>
-        <TagItem>
-          <p>Engine Size: {el.engineSize}</p>
-        </TagItem>
-      </TagList>
-      <p>{el.description}</p>
-      <h4>Accessories and functionalities:</h4>
-      <TagList>
-        {el.functionalities.map(string => {
-          return <TagItem key={string}>{string}</TagItem>;
-        })}
-        {el.accessories.map(string => {
-          return <TagItem key={string}>{string}</TagItem>;
-        })}
-      </TagList>
-      <div>
-        <h5>Rental Conditions: </h5>
-        <p>{el.rentalConditions}</p>
-      </div>
+      </ModalTitle>
+      <Thumb>
+        <TagList>
+          <TagItem>
+            <p>{city}</p>
+          </TagItem>
+          <TagItem>
+            <p>{country}</p>
+          </TagItem>
+          <TagItem>
+            <p>id: {el.id}</p>
+          </TagItem>
+          <TagItem>
+            <p>Year: {el.year}</p>
+          </TagItem>
+          <TagItem>
+            <p>Type: {el.type}</p>
+          </TagItem>
+          <TagItem>
+            <p>Fuel Consumption: {el.fuelConsumption}</p>
+          </TagItem>
+          <TagItem>
+            <p>Engine Size: {el.engineSize}</p>
+          </TagItem>
+        </TagList>
+        <Decription>{el.description}</Decription>
+        <div>
+          <Text>Accessories and functionalities:</Text>
+          <TagList>
+            {el.functionalities.map((string, index) => {
+              return <TagItem key={index}>{string}</TagItem>;
+            })}
+            {el.accessories.map((string, index) => {
+              return <TagItem key={index}>{string}</TagItem>;
+            })}
+          </TagList>
+        </div>
+        <div>
+          <Text>Rental Conditions: </Text>
+          <ConditionList>
+            {rentalConditions.map((condition, index) => (
+              <ConditionItem key={index}>
+                <p>{condition}</p>
+              </ConditionItem>
+            ))}
+            <ConditionItem>
+              <p>Milage: {el.mileage}</p>
+            </ConditionItem>
+            <ConditionItem>
+              <p>Price: {el.rentalPrice}</p>
+            </ConditionItem>
+          </ConditionList>
+        </div>
+      </Thumb>
 
       <Button type="button">Rental car</Button>
     </Container>
