@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/task-car-rental/static/css/main.e6c13ad2.css",
+    "main.js": "/task-car-rental/static/js/main.b08f014c.js",
+    "index.html": "/task-car-rental/index.html",
+    "main.e6c13ad2.css.map": "/task-car-rental/static/css/main.e6c13ad2.css.map",
+    "main.b08f014c.js.map": "/task-car-rental/static/js/main.b08f014c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.b08f014c.js"
+  ]
+}
