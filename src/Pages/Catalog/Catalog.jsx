@@ -26,7 +26,7 @@ const Catalog = () => {
       const { height: cardHeight } = lastImage.getBoundingClientRect();
 
       window.scrollBy({
-        top: cardHeight * 0.5,
+        top: cardHeight * 1,
         behavior: 'smooth',
       });
     }

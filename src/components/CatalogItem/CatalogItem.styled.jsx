@@ -4,18 +4,19 @@ export const Card = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 240px;
-  height: 320px;
+  flex-basis: calc((100% - 90px) / 4);
+  height: 380px;
   padding: 0;
 `;
 
-export const Image = styled.img`
-  display: block;
-  width: 240px;
-  height: 160px;
+export const Image = styled.div`
+ 
+  height: 220px;
   border-radius: 15px;
 
   margin-bottom: 14px;
+
+  overflow: hidden;
 `;
 
 export const TitleThumb = styled.div`

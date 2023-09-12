@@ -46,7 +46,9 @@ const CatalogItem = ({ el }) => {
     <>
       <Card>
         <div>
-          <Image src={el.img} alt={`${el.make} ${el.model}`} width={240} />
+          <Image>
+            <img src={el.img} alt={`${el.make} ${el.model}`} />
+          </Image>
           <TitleThumb>
             <CardTitle>
               {el.make} <Accent>{el.model}</Accent>, {el.year}

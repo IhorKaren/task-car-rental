@@ -9,8 +9,8 @@ export const Container = styled.div`
   padding: 20px;
   border-radius: 15px;
   background-color: #ffffff;
-  width: 540px;
-  max-height: 550px;
+  width: 100vw;
+  max-width: 540px;
 `;
 
 export const CloseModal = styled.button`
@@ -35,7 +35,7 @@ export const Thumb = styled.div`
   flex-direction: column;
   gap: 10px;
 
-  overflow-y: scroll;
+  /* overflow-y: scroll;
 
   ::-webkit-scrollbar {
     background-color: #d8d8d8;
@@ -46,12 +46,12 @@ export const Thumb = styled.div`
   ::-webkit-scrollbar-thumb {
     background-color: #3470ff;
     border-radius: 12px;
-  }
+  } */
 `;
 
 export const ModalImage = styled.img`
   display: block;
-  width: 320px;
+  max-width: 320px;
 
   border-radius: 15px;
   margin-left: auto;
@@ -131,7 +131,7 @@ export const ConditionItem = styled.li`
   background-color: #f9f9f9;
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
   display: inline-flex;
   width: 168px;
   justify-content: center;
@@ -141,6 +141,7 @@ export const Button = styled.button`
 
   color: #ffffff;
   background-color: #3470ff;
+  text-decoration: none;
 
   transition: background-color 250ms linear;
 
