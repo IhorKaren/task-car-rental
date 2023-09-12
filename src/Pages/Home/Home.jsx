@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <>
       {/* {loading && <Loader />} */}
-      <h1>Trending today</h1>
+      <h1>Info</h1>
     </>
   );
 };

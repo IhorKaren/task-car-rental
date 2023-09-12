@@ -76,4 +76,13 @@ export const Button = styled.button`
 
   color: #ffffff;
   background-color: #3470ff;
+
+  transition: background-color 250ms linear;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: #0b44cd;
+  }
 `;
