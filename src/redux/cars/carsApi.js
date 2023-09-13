@@ -3,13 +3,45 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const carsApi = createApi({
   reducerPath: 'carsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://65003d2918c34dee0cd490c8.mockapi.io/api/advert/',
+    baseUrl: 'https://65003d2918c34dee0cd490c8.mockapi.io/api/',
   }),
+  tagTypes: ['Cars', 'Favorites'],
   endpoints: builder => ({
     getCars: builder.query({
-      query: ({ page, limit }) => `?p=${page}&l=${limit}`,
+      query: ({ page, limit }) => `advert/?p=${page}&l=${limit}`,
+      providesTags: ['Cars'],
+    }),
+    getFavorites: builder.query({
+      query: ({ page, limit }) => `favorites/?p=${page}&l=${limit}`,
+      providesTags: ['Favorites'],
+    }),
+    getAllFavorites: builder.query({
+      query: () => `favorites`,
+      providesTags: ['Favorites'],
+    }),
+    addToFavorites: builder.mutation({
+      query: data => ({
+        url: `favorites`,
+        method: 'POST',
+        body: data,
+      }),
+      invalidatesTags: ['Favorites'],
+    }),
+    removeFromFavorites: builder.mutation({
+      query: id => ({
+        url: `favorites/${id}`,
+        method: 'DELETE',
+        body: id,
+      }),
+      invalidatesTags: ['Favorites'],
     }),
   }),
 });
 
-export const { useGetCarsQuery } = carsApi;
+export const {
+  useGetCarsQuery,
+  useGetFavoritesQuery,
+  useGetAllFavoritesQuery,
+  useAddToFavoritesMutation,
+  useRemoveFromFavoritesMutation,
+} = carsApi;

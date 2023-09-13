@@ -15,7 +15,7 @@ import {
   Button,
 } from '../CatalogItemModal/CatalogItemModal.styled';
 
-const CatalogItemModal = ({ el, city, country, closeModal }) => {
+const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
   const rentalConditions = el.rentalConditions.split('\n');
 
   return (
@@ -59,12 +59,12 @@ const CatalogItemModal = ({ el, city, country, closeModal }) => {
         <div>
           <Text>Accessories and functionalities:</Text>
           <TagList>
-            {el.functionalities.map((string, index) => {
-              return <TagItem key={index}>{string}</TagItem>;
-            })}
-            {el.accessories.map((string, index) => {
-              return <TagItem key={index}>{string}</TagItem>;
-            })}
+            {el.functionalities.map((string, index) => (
+              <TagItem key={index}>{string}</TagItem>
+            ))}
+            {el.accessories.map((string, index) => (
+              <TagItem key={index}>{string}</TagItem>
+            ))}
           </TagList>
         </div>
         <div>
@@ -76,7 +76,7 @@ const CatalogItemModal = ({ el, city, country, closeModal }) => {
               </ConditionItem>
             ))}
             <ConditionItem>
-              <p>Milage: {el.mileage}</p>
+              <p>Milage: {addComma(el.mileage)}</p>
             </ConditionItem>
             <ConditionItem>
               <p>Price: {el.rentalPrice}</p>

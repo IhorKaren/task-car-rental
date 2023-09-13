@@ -7,12 +7,17 @@ const Catalog = () => {
   const [page, setPage] = useState(1);
   const { data = [] } = useGetCarsQuery({ page: page, limit: 8 });
   const [carsList, setCarsList] = useState([]);
+  const [isFirstRender, setIsFirstRender] = useState(true);
 
   useEffect(() => {
+    if (isFirstRender) {
+      return setIsFirstRender(false);
+    }
+
     if (data && data.length > 0) {
       setCarsList(prevState => [...prevState, ...data]);
     }
-  }, [data]);
+  }, [data, isFirstRender]);
 
   const loadMoreBtnClick = () => {
     setPage(prevPage => prevPage + 1);
@@ -36,7 +41,7 @@ const Catalog = () => {
     <>
       <h1>Catalog</h1>
       <CatalogList data={carsList} />
-      {data.length > 1 && <LoadMoreBtn onClick={loadMoreBtnClick} />}
+      {data.length > 7 && <LoadMoreBtn onClick={loadMoreBtnClick} />}
     </>
   );
 };

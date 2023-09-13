@@ -5,12 +5,14 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  max-width: 540px;
+  height: 100vh;
+  max-height: 700px;
   gap: 10px;
   padding: 20px;
   border-radius: 15px;
   background-color: #ffffff;
-  width: 100vw;
-  max-width: 540px;
 `;
 
 export const CloseModal = styled.button`
@@ -52,6 +54,7 @@ export const Thumb = styled.div`
 export const ModalImage = styled.img`
   display: block;
   max-width: 320px;
+  max-height: 220px;
 
   border-radius: 15px;
   margin-left: auto;
@@ -75,6 +78,7 @@ export const TagList = styled.ul`
 
   display: flex;
   flex-wrap: wrap;
+  max-width: 340px;
 `;
 
 export const TagItem = styled.li`
@@ -99,6 +103,8 @@ export const TagItem = styled.li`
 `;
 
 export const Decription = styled.p`
+  max-width: 440px;
+
   font-size: 14px;
   line-height: 1.42;
 `;

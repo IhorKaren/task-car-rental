@@ -1,17 +1,51 @@
 import styled from 'styled-components';
+import { BsHeartFill } from 'react-icons/bs';
 
 export const Card = styled.li`
+  position: relative;
   display: flex;
+  max-width: 268px;
+  height: 380px;
   flex-direction: column;
   justify-content: space-between;
-  flex-basis: calc((100% - 90px) / 4);
-  height: 380px;
+
   padding: 0;
 `;
 
+export const FavoriteButton = styled.button`
+  display: inline-flex;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background-color: transparent;
+
+  transition: fill 250ms linear;
+
+  cursor: pointer;
+
+  fill: #ffffff;
+
+  &:hover,
+  &:focus {
+    fill: #3470ff;
+  }
+`;
+
+export const Icon = styled(BsHeartFill)`
+  width: 20px;
+  height: 20px;
+  /* fill: inherit; */
+`;
+
 export const Image = styled.div`
- 
-  height: 220px;
+  height: 100%;
+  max-height: 200px;
   border-radius: 15px;
 
   margin-bottom: 14px;
@@ -69,9 +103,7 @@ export const TagItem = styled.li`
 `;
 
 export const Button = styled.button`
-  display: inline-flex;
-  width: 100%;
-  justify-content: center;
+  display: block;
   border: none;
   border-radius: 12px;
   padding: 12px;
