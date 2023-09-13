@@ -12,10 +12,6 @@ export const carsApi = createApi({
       providesTags: ['Cars'],
     }),
     getFavorites: builder.query({
-      query: ({ page, limit }) => `favorites/?p=${page}&l=${limit}`,
-      providesTags: ['Favorites'],
-    }),
-    getAllFavorites: builder.query({
       query: () => `favorites`,
       providesTags: ['Favorites'],
     }),
@@ -41,7 +37,6 @@ export const carsApi = createApi({
 export const {
   useGetCarsQuery,
   useGetFavoritesQuery,
-  useGetAllFavoritesQuery,
   useAddToFavoritesMutation,
   useRemoveFromFavoritesMutation,
 } = carsApi;

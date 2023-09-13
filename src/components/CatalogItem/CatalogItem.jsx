@@ -14,34 +14,24 @@ import {
 import PageModal from 'components/Modal/Modal';
 import CatalogItemModal from 'components/CatalogItemModal/CatalogItemModal';
 import {
-  useGetAllFavoritesQuery,
+  useGetFavoritesQuery,
   useAddToFavoritesMutation,
   useRemoveFromFavoritesMutation,
 } from 'redux/cars/carsApi';
+import { useLocation } from 'react-router-dom';
 
 const CatalogItem = ({ el }) => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [favorites, setFavorites] = useState([]);
-  const [isFirstRender, setIsFirstRender] = useState(true);
 
-  const { data = [] } = useGetAllFavoritesQuery();
-
+  const { data = [] } = useGetFavoritesQuery();
   const [addToFavorites] = useAddToFavoritesMutation();
   const [removeFromFavorites] = useRemoveFromFavoritesMutation();
 
-  const checkFavorites = data.some(favorite => favorite.img === el.img);
+  const location = useLocation();
 
-  console.log(favorites);
+  const isFavorite = data.find(favorite => favorite._id === el.id);
 
-  useEffect(() => {
-    if (isFirstRender) {
-      return setIsFirstRender(false);
-    }
-
-    if (data && data.length > 0) {
-      setFavorites(prevState => [...prevState, ...data]);
-    }
-  }, [data, isFirstRender]);
+  const checkLocation = location.pathname === '/favorites';
 
   useEffect(() => {
     if (isModalOpen) {
@@ -67,14 +57,19 @@ const CatalogItem = ({ el }) => {
     return number.toLocaleString('en-US');
   };
 
-  const favoriteItemToggle = el => {
-    if (checkFavorites) {
-      removeFromFavorites(el.id);
+  const favoriteItemToggle = favorite => {
+    if (checkLocation) {
+      removeFromFavorites(favorite.id);
       return;
     }
 
-    if (!checkFavorites) {
-      addToFavorites(el);
+    if (isFavorite) {
+      removeFromFavorites(isFavorite.id);
+      return;
+    }
+
+    if (!isFavorite) {
+      addToFavorites({ ...favorite, _id: favorite.id });
       return;
     }
   };
@@ -91,7 +86,7 @@ const CatalogItem = ({ el }) => {
             <img src={el.img} alt={`${el.make} ${el.model}`} />
           </Image>
           <FavoriteButton type="button" onClick={() => favoriteItemToggle(el)}>
-            <Icon fill={checkFavorites ? '#3470ff' : '#ffffff'} />
+            <Icon fill={isFavorite || checkLocation ? '#3470ff' : '#ffffff'} />
           </FavoriteButton>
           <TitleThumb>
             <CardTitle>
