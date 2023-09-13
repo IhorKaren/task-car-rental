@@ -11,14 +11,15 @@ import {
   TagItem,
   Button,
 } from './CatalogItem.styled';
-import PageModal from 'components/Modal/Modal';
-import CatalogItemModal from 'components/CatalogItemModal/CatalogItemModal';
 import {
   useGetFavoritesQuery,
   useAddToFavoritesMutation,
   useRemoveFromFavoritesMutation,
 } from 'redux/cars/carsApi';
 import { useLocation } from 'react-router-dom';
+
+import PageModal from 'components/Modal/Modal';
+import CatalogItemModal from 'components/CatalogItemModal/CatalogItemModal';
 
 const CatalogItem = ({ el }) => {
   const [isModalOpen, setModalOpen] = useState(false);

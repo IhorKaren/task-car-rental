@@ -1,13 +1,29 @@
 import { useState, useEffect } from 'react';
-import { useGetCarsQuery } from 'redux/cars/carsApi';
+import { useGetCarsQuery, useGetCarsByBrandQuery } from 'redux/cars/carsApi';
+
+import Filter from 'components/Filter/Filter';
 import CatalogList from 'components/CatalogList/CatalogList';
 import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 
 const Catalog = () => {
   const [page, setPage] = useState(1);
+  const [brand, setBrand] = useState('without');
   const { data = [] } = useGetCarsQuery({ page: page, limit: 8 });
+  const { data: filter = [] } = useGetCarsByBrandQuery({
+    page: page,
+    limit: 8,
+    brand,
+  });
   const [carsList, setCarsList] = useState([]);
+  const [filteredCars, setFilteredCars] = useState([]);
   const [isFirstRender, setIsFirstRender] = useState(true);
+
+  useEffect(() => {
+    if (filter && filter.length > 0) {
+      setFilteredCars([...filter]);
+      return;
+    }
+  }, [filter, isFirstRender]);
 
   useEffect(() => {
     if (isFirstRender) {
@@ -16,6 +32,7 @@ const Catalog = () => {
 
     if (data && data.length > 0) {
       setCarsList(prevState => [...prevState, ...data]);
+      return;
     }
   }, [data, isFirstRender]);
 
@@ -37,11 +54,26 @@ const Catalog = () => {
     }
   }, [carsList]);
 
+  const onFilterSubmit = brand => {
+    if (brand === 'without') {
+      setFilteredCars([]);
+      setCarsList([...data]);
+      return;
+    }
+
+    setPage(1);
+    setCarsList([]);
+    setBrand(brand);
+  };
+
+  const primaryArray = filteredCars.length === 0 ? carsList : filteredCars;
+
   return (
     <>
-      <h1>Catalog</h1>
-      <CatalogList data={carsList} />
-      {data.length > 7 && <LoadMoreBtn onClick={loadMoreBtnClick} />}
+      <h1 className="visually-hidden">Catalog</h1>
+      <Filter onSubmit={onFilterSubmit} />
+      <CatalogList data={primaryArray} />
+      {primaryArray.length > 7 && <LoadMoreBtn onClick={loadMoreBtnClick} />}
     </>
   );
 };
