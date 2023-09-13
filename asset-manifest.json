@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/task-car-rental/static/css/main.5c2b4590.css",
-    "main.js": "/task-car-rental/static/js/main.c81193ff.js",
+    "main.css": "/task-car-rental/static/css/main.c076c8bf.css",
+    "main.js": "/task-car-rental/static/js/main.a625e630.js",
     "static/js/765.cfada0a4.chunk.js": "/task-car-rental/static/js/765.cfada0a4.chunk.js",
-    "static/js/427.39c97f0a.chunk.js": "/task-car-rental/static/js/427.39c97f0a.chunk.js",
-    "static/js/137.a0c5493c.chunk.js": "/task-car-rental/static/js/137.a0c5493c.chunk.js",
-    "static/js/185.6e5ae7c8.chunk.js": "/task-car-rental/static/js/185.6e5ae7c8.chunk.js",
+    "static/js/427.82979315.chunk.js": "/task-car-rental/static/js/427.82979315.chunk.js",
+    "static/js/15.fa85837a.chunk.js": "/task-car-rental/static/js/15.fa85837a.chunk.js",
+    "static/js/185.1f3958f7.chunk.js": "/task-car-rental/static/js/185.1f3958f7.chunk.js",
     "index.html": "/task-car-rental/index.html",
-    "main.5c2b4590.css.map": "/task-car-rental/static/css/main.5c2b4590.css.map",
-    "main.c81193ff.js.map": "/task-car-rental/static/js/main.c81193ff.js.map",
+    "main.c076c8bf.css.map": "/task-car-rental/static/css/main.c076c8bf.css.map",
+    "main.a625e630.js.map": "/task-car-rental/static/js/main.a625e630.js.map",
     "765.cfada0a4.chunk.js.map": "/task-car-rental/static/js/765.cfada0a4.chunk.js.map",
-    "427.39c97f0a.chunk.js.map": "/task-car-rental/static/js/427.39c97f0a.chunk.js.map",
-    "137.a0c5493c.chunk.js.map": "/task-car-rental/static/js/137.a0c5493c.chunk.js.map",
-    "185.6e5ae7c8.chunk.js.map": "/task-car-rental/static/js/185.6e5ae7c8.chunk.js.map"
+    "427.82979315.chunk.js.map": "/task-car-rental/static/js/427.82979315.chunk.js.map",
+    "15.fa85837a.chunk.js.map": "/task-car-rental/static/js/15.fa85837a.chunk.js.map",
+    "185.1f3958f7.chunk.js.map": "/task-car-rental/static/js/185.1f3958f7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c2b4590.css",
-    "static/js/main.c81193ff.js"
+    "static/css/main.c076c8bf.css",
+    "static/js/main.a625e630.js"
   ]
 }
