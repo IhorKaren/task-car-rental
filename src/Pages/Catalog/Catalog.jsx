@@ -7,16 +7,17 @@ import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 
 const Catalog = () => {
   const [page, setPage] = useState(1);
+  const [carsList, setCarsList] = useState([]);
+  const [filteredCars, setFilteredCars] = useState([]);
+  const [isFirstRender, setIsFirstRender] = useState(true);
   const [brand, setBrand] = useState('without');
+
   const { data = [] } = useGetCarsQuery({ page: page, limit: 8 });
   const { data: filter = [] } = useGetCarsByBrandQuery({
     page: page,
     limit: 8,
     brand,
   });
-  const [carsList, setCarsList] = useState([]);
-  const [filteredCars, setFilteredCars] = useState([]);
-  const [isFirstRender, setIsFirstRender] = useState(true);
 
   useEffect(() => {
     if (filter && filter.length > 0) {
@@ -36,10 +37,6 @@ const Catalog = () => {
     }
   }, [data, isFirstRender]);
 
-  const loadMoreBtnClick = () => {
-    setPage(prevPage => prevPage + 1);
-  };
-
   useEffect(() => {
     const list = document.querySelector('ul');
     const lastImage = list.lastElementChild;
@@ -53,6 +50,10 @@ const Catalog = () => {
       });
     }
   }, [carsList]);
+
+  const loadMoreBtnClick = () => {
+    setPage(prevPage => prevPage + 1);
+  };
 
   const onFilterSubmit = brand => {
     if (brand === 'without') {

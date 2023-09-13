@@ -85,7 +85,9 @@ const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
         </div>
       </Thumb>
 
-      <Button href="tel:+380730000000">Rental car</Button>
+      <Button href="tel:+380730000000" rel="noopener">
+        Rental car
+      </Button>
     </Container>
   );
 };

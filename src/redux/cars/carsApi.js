@@ -14,7 +14,7 @@ export const carsApi = createApi({
     getCarsByBrand: builder.query({
       query: ({ page, limit, brand }) =>
         `advert/?make=${brand}&p=${page}&l=${limit}`,
-      invalidatesTags: ['Cars'],
+      providesTags: ['Cars'],
     }),
     getFavorites: builder.query({
       query: () => `favorites`,

@@ -4,8 +4,8 @@ import { BsHeartFill } from 'react-icons/bs';
 export const Card = styled.li`
   position: relative;
   display: flex;
-  max-width: 268px;
-  height: 380px;
+  width: 268px;
+  height: 360px;
   flex-direction: column;
   justify-content: space-between;
 
@@ -28,19 +28,11 @@ export const FavoriteButton = styled.button`
   transition: fill 250ms linear;
 
   cursor: pointer;
-
-  fill: #ffffff;
-
-  &:hover,
-  &:focus {
-    fill: #3470ff;
-  }
 `;
 
 export const Icon = styled(BsHeartFill)`
   width: 20px;
   height: 20px;
-  /* fill: inherit; */
 `;
 
 export const Image = styled.div`
@@ -84,7 +76,7 @@ export const TagList = styled.ul`
 export const TagItem = styled.li`
   position: relative;
 
-  color: rgba(18, 20, 23, 0.5);
+  color: rgba(18, 20, 23, 0.7);
 
   font-size: 12px;
 
@@ -97,8 +89,8 @@ export const TagItem = styled.li`
     position: absolute;
     top: 0;
     right: -6px;
-    height: 14px;
-    border: 1px solid rgba(18, 20, 23, 0.1);
+    height: 12px;
+    border: 1px solid rgba(18, 20, 23, 0.2);
   }
 `;
 
