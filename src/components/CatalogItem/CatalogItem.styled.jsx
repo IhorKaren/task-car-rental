@@ -5,7 +5,7 @@ export const Card = styled.li`
   position: relative;
   display: flex;
   width: 268px;
-  height: 460px;
+  height: 426px;
   flex-direction: column;
   justify-content: space-between;
 
@@ -65,7 +65,6 @@ export const TitleThumb = styled.div`
 export const CardTitle = styled.h2`
   font-size: 14px;
   line-height: 1.5;
-  font-weight: 500;
 `;
 
 export const Accent = styled.span`

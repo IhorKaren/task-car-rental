@@ -26,14 +26,18 @@ export const SelectThumb = styled.div`
 
 export const Select = styled.select`
   appearance: none;
+  height: 48px;
+  padding: 0 36px 0 18px;
 
-  padding: 14px 36px 14px 18px;
   border-radius: 14px;
 
   border: none;
   outline: none;
 
   background-color: #f7f7fb;
+
+  font-family: 'Manrope';
+  font-weight: 600;
 
   cursor: pointer;
 `;

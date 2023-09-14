@@ -20,10 +20,14 @@ const Nav = styled.nav`
 `;
 
 const Link = styled(NavLink)`
+  color: #ffffff;
+
+  font-family: 'Manrope';
+  font-weight: 600;
   font-size: 20px;
   font-weight: 500;
-  color: #ffffff;
   text-decoration: none;
+
   transition: color 200ms linear;
 
   :hover {

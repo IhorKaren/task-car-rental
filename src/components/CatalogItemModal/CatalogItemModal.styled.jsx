@@ -64,7 +64,6 @@ export const ModalImage = styled.img`
 export const ModalTitle = styled.h3`
   font-size: 14px;
   line-height: 1.5;
-  font-weight: 500;
 `;
 
 export const Accent = styled.span`
@@ -105,6 +104,8 @@ export const TagItem = styled.li`
 export const Decription = styled.p`
   max-width: 440px;
 
+  font-family: 'Manrope';
+  font-weight: 600;
   font-size: 14px;
   line-height: 1.42;
 `;
@@ -112,6 +113,8 @@ export const Decription = styled.p`
 export const Text = styled.p`
   margin-bottom: 8px;
 
+  font-family: 'Manrope';
+  font-weight: 600;
   font-size: 14px;
   line-height: 1.42;
 `;
@@ -131,6 +134,8 @@ export const ConditionItem = styled.li`
   padding: 7px 14px;
   border-radius: 35px;
 
+  font-family: 'Manrope';
+  font-weight: 600;
   font-size: 12px;
   line-height: 1.5;
 
