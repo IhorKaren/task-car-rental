@@ -9,10 +9,11 @@ const Favorites = () => {
   const [favoritesList, setFavoritesList] = useState([]);
   const [isFirstRender, setIsFirstRender] = useState(true);
 
-  const { data = [] } = useGetFavoritesQuery({ page: page, limit: 8 });
+  const { data = [] } = useGetFavoritesQuery({ page, limit: 8 });
 
   useEffect(() => {
     if (isFirstRender) {
+      setFavoritesList([]);
       return setIsFirstRender(false);
     }
 
