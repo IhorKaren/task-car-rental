@@ -12,9 +12,9 @@ const Catalog = () => {
   const [isFirstRender, setIsFirstRender] = useState(true);
   const [brand, setBrand] = useState('without');
 
-  const { data = [] } = useGetCarsQuery({ page: page, limit: 8 });
+  const { data = [] } = useGetCarsQuery({ page, limit: 8 });
   const { data: filter = [] } = useGetCarsByBrandQuery({
-    page: page,
+    page,
     limit: 8,
     brand,
   });

@@ -13,7 +13,7 @@ import {
   Button,
 } from './CatalogItem.styled';
 import {
-  useGetFavoritesQuery,
+  useGetAllFavoritesQuery,
   useAddToFavoritesMutation,
   useRemoveFromFavoritesMutation,
 } from 'redux/cars/carsApi';
@@ -22,16 +22,16 @@ import { useLocation } from 'react-router-dom';
 import PageModal from 'components/Modal/Modal';
 import CatalogItemModal from 'components/CatalogItemModal/CatalogItemModal';
 
-const CatalogItem = ({ el }) => {
+const CatalogItem = ({ car, removeItem }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const { data = [] } = useGetFavoritesQuery();
+  const { data = [] } = useGetAllFavoritesQuery();
   const [addToFavorites] = useAddToFavoritesMutation();
   const [removeFromFavorites] = useRemoveFromFavoritesMutation();
 
   const location = useLocation();
 
-  const isFavorite = data.find(favorite => favorite._id === el.id);
+  const isFavorite = data.find(favorite => favorite._id === car.id);
 
   const checkLocation = location.pathname === '/favorites';
 
@@ -61,6 +61,7 @@ const CatalogItem = ({ el }) => {
 
   const favoriteItemToggle = favorite => {
     if (checkLocation) {
+      removeItem(favorite.id);
       removeFromFavorites(favorite.id);
       return;
     }
@@ -76,7 +77,7 @@ const CatalogItem = ({ el }) => {
     }
   };
 
-  const address = el.address.split(',');
+  const address = car.address.split(',');
   const city = address[1];
   const country = address[2];
 
@@ -85,16 +86,16 @@ const CatalogItem = ({ el }) => {
       <Card>
         <div>
           <ImageThumb>
-            <Image src={el.img} alt={`${el.make} ${el.model}`} />
+            <Image src={car.img} alt={`${car.make} ${car.model}`} />
           </ImageThumb>
-          <FavoriteButton type="button" onClick={() => favoriteItemToggle(el)}>
+          <FavoriteButton type="button" onClick={() => favoriteItemToggle(car)}>
             <Icon fill={isFavorite || checkLocation ? '#3470ff' : '#ffffff'} />
           </FavoriteButton>
           <TitleThumb>
             <CardTitle>
-              {el.make} <Accent>{el.model}</Accent>, {el.year}
+              {car.make} <Accent>{car.model}</Accent>, {car.year}
             </CardTitle>
-            <p>{el.rentalPrice}</p>
+            <p>{car.rentalPrice}</p>
           </TitleThumb>
           <TagList>
             <TagItem>
@@ -104,19 +105,19 @@ const CatalogItem = ({ el }) => {
               <p>{country}</p>
             </TagItem>
             <TagItem>
-              <p> {el.rentalCompany}</p>
+              <p> {car.rentalCompany}</p>
             </TagItem>
             <TagItem>
-              <p>{el.type}</p>
+              <p>{car.type}</p>
             </TagItem>
             <TagItem>
-              <p>{el.make}</p>
+              <p>{car.make}</p>
             </TagItem>
             <TagItem>
-              <p>{addCommaToNumber(el.mileage)}</p>
+              <p>{addCommaToNumber(car.mileage)}</p>
             </TagItem>
             <TagItem>
-              <p>{el.accessories[2]}</p>
+              <p>{car.accessories[2]}</p>
             </TagItem>
           </TagList>
         </div>
@@ -127,7 +128,7 @@ const CatalogItem = ({ el }) => {
       {isModalOpen && (
         <PageModal closeModal={closeModal}>
           <CatalogItemModal
-            el={el}
+            el={car}
             city={city}
             country={country}
             closeModal={closeModal}

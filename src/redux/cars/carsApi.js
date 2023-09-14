@@ -5,7 +5,7 @@ export const carsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://65003d2918c34dee0cd490c8.mockapi.io/api/',
   }),
-  tagTypes: ['Cars', 'Favorites'],
+  tagTypes: ['Cars', 'Favorites', 'Favorite'],
   endpoints: builder => ({
     getCars: builder.query({
       query: ({ page, limit }) => `advert/?p=${page}&l=${limit}`,
@@ -16,9 +16,13 @@ export const carsApi = createApi({
         `advert/?make=${brand}&p=${page}&l=${limit}`,
       providesTags: ['Cars'],
     }),
-    getFavorites: builder.query({
+    getAllFavorites: builder.query({
       query: () => `favorites`,
       providesTags: ['Favorites'],
+    }),
+    getFavorites: builder.query({
+      query: ({ page, limit }) => `favorites/?p=${page}&l=${limit}`,
+      providesTags: ['Favorite'],
     }),
     addToFavorites: builder.mutation({
       query: data => ({
@@ -26,7 +30,7 @@ export const carsApi = createApi({
         method: 'POST',
         body: data,
       }),
-      invalidatesTags: ['Favorites'],
+      invalidatesTags: ['Favorites', 'Favorite'],
     }),
     removeFromFavorites: builder.mutation({
       query: id => ({
@@ -42,6 +46,7 @@ export const carsApi = createApi({
 export const {
   useGetCarsQuery,
   useGetCarsByBrandQuery,
+  useGetAllFavoritesQuery,
   useGetFavoritesQuery,
   useAddToFavoritesMutation,
   useRemoveFromFavoritesMutation,
