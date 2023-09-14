@@ -5,7 +5,7 @@ export const Card = styled.li`
   position: relative;
   display: flex;
   width: 268px;
-  height: 360px;
+  height: 460px;
   flex-direction: column;
   justify-content: space-between;
 
@@ -35,14 +35,22 @@ export const Icon = styled(BsHeartFill)`
   height: 20px;
 `;
 
-export const Image = styled.div`
-  height: 100%;
-  max-height: 200px;
+export const ImageThumb = styled.div`
+  position: relative;
+  height: 268px;
   border-radius: 15px;
 
   margin-bottom: 14px;
 
   overflow: hidden;
+`;
+
+export const Image = styled.img`
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 400px;
+  height: auto;
 `;
 
 export const TitleThumb = styled.div`

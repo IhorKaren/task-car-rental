@@ -3,6 +3,7 @@ import {
   Card,
   FavoriteButton,
   Icon,
+  ImageThumb,
   Image,
   TitleThumb,
   CardTitle,
@@ -83,9 +84,9 @@ const CatalogItem = ({ el }) => {
     <>
       <Card>
         <div>
-          <Image>
-            <img src={el.img} alt={`${el.make} ${el.model}`} />
-          </Image>
+          <ImageThumb>
+            <Image src={el.img} alt={`${el.make} ${el.model}`} />
+          </ImageThumb>
           <FavoriteButton type="button" onClick={() => favoriteItemToggle(el)}>
             <Icon fill={isFavorite || checkLocation ? '#3470ff' : '#ffffff'} />
           </FavoriteButton>

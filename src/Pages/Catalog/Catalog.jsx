@@ -21,7 +21,8 @@ const Catalog = () => {
 
   useEffect(() => {
     if (filter && filter.length > 0) {
-      setFilteredCars([...filter]);
+      setFilteredCars(prevState => [...prevState, ...filter]);
+      setCarsList([]);
       return;
     }
   }, [filter, isFirstRender]);
@@ -69,12 +70,14 @@ const Catalog = () => {
 
   const primaryArray = filteredCars.length === 0 ? carsList : filteredCars;
 
+  const isLoadMoreShown = data.length > 7 && carsList.length > 7;
+
   return (
     <>
       <h1 className="visually-hidden">Catalog</h1>
       <Filter onSubmit={onFilterSubmit} />
       <CatalogList data={primaryArray} />
-      {primaryArray.length > 7 && <LoadMoreBtn onClick={loadMoreBtnClick} />}
+      {isLoadMoreShown && <LoadMoreBtn onClick={loadMoreBtnClick} />}
     </>
   );
 };

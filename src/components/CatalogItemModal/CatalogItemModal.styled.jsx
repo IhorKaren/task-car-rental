@@ -36,12 +36,25 @@ export const Thumb = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    background-color: #d8d8d8;
+    width: 4px;
+    border-radius: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #3470ff;
+    border-radius: 12px;
+  }
 `;
 
 export const ModalImage = styled.img`
   display: block;
-  max-width: 320px;
-  max-height: 220px;
+  width: 470px;
+  height: auto;
 
   border-radius: 15px;
   margin-left: auto;
