@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/task-car-rental/static/css/main.488a284b.css",
-    "main.js": "/task-car-rental/static/js/main.e2537227.js",
+    "main.css": "/task-car-rental/static/css/main.4cec7368.css",
+    "main.js": "/task-car-rental/static/js/main.1d77342a.js",
     "static/js/999.66d54eff.chunk.js": "/task-car-rental/static/js/999.66d54eff.chunk.js",
-    "static/js/81.a66a1216.chunk.js": "/task-car-rental/static/js/81.a66a1216.chunk.js",
-    "static/js/110.e483db19.chunk.js": "/task-car-rental/static/js/110.e483db19.chunk.js",
+    "static/js/81.2751e2be.chunk.js": "/task-car-rental/static/js/81.2751e2be.chunk.js",
+    "static/js/110.2f70b2cb.chunk.js": "/task-car-rental/static/js/110.2f70b2cb.chunk.js",
     "static/js/185.1f3958f7.chunk.js": "/task-car-rental/static/js/185.1f3958f7.chunk.js",
     "static/media/Kha_flat_simple_design_Porsche_Carrera_4s_6727bbd9-cb8f-4502-996f-9c3c9385c124_upscayl_4x_realesrgan-x4plus.webp": "/task-car-rental/static/media/Kha_flat_simple_design_Porsche_Carrera_4s_6727bbd9-cb8f-4502-996f-9c3c9385c124_upscayl_4x_realesrgan-x4plus.810aa44554ffec9cba88.webp",
     "index.html": "/task-car-rental/index.html",
-    "main.488a284b.css.map": "/task-car-rental/static/css/main.488a284b.css.map",
-    "main.e2537227.js.map": "/task-car-rental/static/js/main.e2537227.js.map",
+    "main.4cec7368.css.map": "/task-car-rental/static/css/main.4cec7368.css.map",
+    "main.1d77342a.js.map": "/task-car-rental/static/js/main.1d77342a.js.map",
     "999.66d54eff.chunk.js.map": "/task-car-rental/static/js/999.66d54eff.chunk.js.map",
-    "81.a66a1216.chunk.js.map": "/task-car-rental/static/js/81.a66a1216.chunk.js.map",
-    "110.e483db19.chunk.js.map": "/task-car-rental/static/js/110.e483db19.chunk.js.map",
+    "81.2751e2be.chunk.js.map": "/task-car-rental/static/js/81.2751e2be.chunk.js.map",
+    "110.2f70b2cb.chunk.js.map": "/task-car-rental/static/js/110.2f70b2cb.chunk.js.map",
     "185.1f3958f7.chunk.js.map": "/task-car-rental/static/js/185.1f3958f7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.488a284b.css",
-    "static/js/main.e2537227.js"
+    "static/css/main.4cec7368.css",
+    "static/js/main.1d77342a.js"
   ]
 }
