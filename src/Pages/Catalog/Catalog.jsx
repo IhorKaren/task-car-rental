@@ -21,7 +21,7 @@ const Catalog = () => {
 
   useEffect(() => {
     if (filter && filter.length > 0) {
-      setFilteredCars(prevState => [...prevState, ...filter]);
+      setFilteredCars([...filter]);
       setCarsList([]);
       return;
     }
