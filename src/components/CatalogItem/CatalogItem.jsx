@@ -13,7 +13,7 @@ import {
   Button,
 } from './CatalogItem.styled';
 import {
-  useGetAllFavoritesQuery,
+  useGetFavoritesQuery,
   useAddToFavoritesMutation,
   useRemoveFromFavoritesMutation,
 } from 'redux/cars/carsApi';
@@ -22,10 +22,10 @@ import { useLocation } from 'react-router-dom';
 import PageModal from 'components/Modal/Modal';
 import CatalogItemModal from 'components/CatalogItemModal/CatalogItemModal';
 
-const CatalogItem = ({ car, removeItem }) => {
+const CatalogItem = ({ car }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const { data = [] } = useGetAllFavoritesQuery();
+  const { data = [] } = useGetFavoritesQuery();
   const [addToFavorites] = useAddToFavoritesMutation();
   const [removeFromFavorites] = useRemoveFromFavoritesMutation();
 
@@ -61,7 +61,6 @@ const CatalogItem = ({ car, removeItem }) => {
 
   const favoriteItemToggle = favorite => {
     if (checkLocation) {
-      removeItem(favorite.id);
       removeFromFavorites(favorite.id);
       return;
     }

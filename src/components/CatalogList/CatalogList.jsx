@@ -1,13 +1,10 @@
 import CatalogItem from 'components/CatalogItem/CatalogItem';
 import { List } from './CatalogList.styled';
 
-const CatalogList = ({ data, removeItem }) => {
+const CatalogList = ({ data }) => {
   return (
     <List className="CarsList">
-      {data &&
-        data.map(el => (
-          <CatalogItem key={el.id} car={el} removeItem={removeItem} />
-        ))}
+      {data && data.map(el => <CatalogItem key={el.id} car={el} />)}
     </List>
   );
 };
