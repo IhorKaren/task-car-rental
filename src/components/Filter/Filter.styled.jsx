@@ -8,17 +8,19 @@ export const Form = styled.form`
   margin-left: auto;
   margin-right: auto;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: center;
 `;
 
 export const Label = styled.label`
+  margin-bottom: 8px;
+
   color: #8a8a89;
 
   font-size: 14px;
   line-height: 1.28;
 `;
 
-export const SelectThumb = styled.div`
+export const Thumb = styled.div`
   position: relative;
   display: inline-flex;
   flex-direction: column;
@@ -26,6 +28,7 @@ export const SelectThumb = styled.div`
 
 export const Select = styled.select`
   appearance: none;
+  width: 224px;
   height: 48px;
   padding: 0 36px 0 18px;
 
@@ -40,6 +43,49 @@ export const Select = styled.select`
   font-weight: 600;
 
   cursor: pointer;
+`;
+
+export const SelectPrice = styled.select`
+  appearance: none;
+  width: 125px;
+  height: 48px;
+  padding: 0 36px 0 18px;
+
+  border-radius: 14px;
+
+  border: none;
+  outline: none;
+
+  background-color: #f7f7fb;
+
+  font-family: 'Manrope';
+  font-weight: 600;
+
+  cursor: pointer;
+`;
+
+export const Input = styled.input`
+  width: 160px;
+  height: 48px;
+  padding: 14px 24px;
+
+  border: none;
+  outline: none;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+
+  &:first-child {
+    border-radius: 14px 0 0 14px;
+  }
+
+  &:last-child {
+    border-radius: 0 14px 14px 0;
+  }
+
+  ::placeholder {
+    font-family: 'Manrope';
+    font-weight: 600;
+    color: black;
+  }
 `;
 
 export const Icon = styled(BsChevronDown)`
