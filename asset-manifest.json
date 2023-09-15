@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/task-car-rental/static/css/main.45cccfd7.css",
-    "main.js": "/task-car-rental/static/js/main.f8083b14.js",
+    "main.js": "/task-car-rental/static/js/main.f0d869b6.js",
     "static/js/999.66d54eff.chunk.js": "/task-car-rental/static/js/999.66d54eff.chunk.js",
     "static/js/81.4d76e40c.chunk.js": "/task-car-rental/static/js/81.4d76e40c.chunk.js",
-    "static/js/110.f8d29c31.chunk.js": "/task-car-rental/static/js/110.f8d29c31.chunk.js",
+    "static/js/110.f8efffcc.chunk.js": "/task-car-rental/static/js/110.f8efffcc.chunk.js",
     "static/js/185.1f3958f7.chunk.js": "/task-car-rental/static/js/185.1f3958f7.chunk.js",
     "static/media/Kha_flat_simple_design_Porsche_Carrera_4s_6727bbd9-cb8f-4502-996f-9c3c9385c124_upscayl_4x_realesrgan-x4plus.webp": "/task-car-rental/static/media/Kha_flat_simple_design_Porsche_Carrera_4s_6727bbd9-cb8f-4502-996f-9c3c9385c124_upscayl_4x_realesrgan-x4plus.810aa44554ffec9cba88.webp",
     "static/media/Manrope-SemiBold.ttf": "/task-car-rental/static/media/Manrope-SemiBold.310f108cc524df0e5ffc.ttf",
@@ -12,14 +12,14 @@
     "static/media/Manrope-Regular.ttf": "/task-car-rental/static/media/Manrope-Regular.a9b9e09fe6b69741f316.ttf",
     "index.html": "/task-car-rental/index.html",
     "main.45cccfd7.css.map": "/task-car-rental/static/css/main.45cccfd7.css.map",
-    "main.f8083b14.js.map": "/task-car-rental/static/js/main.f8083b14.js.map",
+    "main.f0d869b6.js.map": "/task-car-rental/static/js/main.f0d869b6.js.map",
     "999.66d54eff.chunk.js.map": "/task-car-rental/static/js/999.66d54eff.chunk.js.map",
     "81.4d76e40c.chunk.js.map": "/task-car-rental/static/js/81.4d76e40c.chunk.js.map",
-    "110.f8d29c31.chunk.js.map": "/task-car-rental/static/js/110.f8d29c31.chunk.js.map",
+    "110.f8efffcc.chunk.js.map": "/task-car-rental/static/js/110.f8efffcc.chunk.js.map",
     "185.1f3958f7.chunk.js.map": "/task-car-rental/static/js/185.1f3958f7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.45cccfd7.css",
-    "static/js/main.f8083b14.js"
+    "static/js/main.f0d869b6.js"
   ]
 }
