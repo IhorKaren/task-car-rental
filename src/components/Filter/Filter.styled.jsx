@@ -28,7 +28,6 @@ export const Thumb = styled.div`
 
 export const InputThumb = styled.div`
   display: flex;
-
 `;
 
 export const Select = styled.select`
@@ -65,33 +64,39 @@ export const SelectPrice = styled.select`
 
   font-family: 'Manrope';
   font-weight: 600;
+  font-size: 14px;
 
   cursor: pointer;
+`;
+
+export const InputWrap = styled.div`
+  position: relative;
+`;
+
+export const InputLabel = styled.label`
+  position: absolute;
+  top: 50%;
+  left: 24px;
+
+  transform: translateY(-50%);
+
+  font-family: 'Manrope';
+  font-weight: 600;
+  font-size: 14px;
 `;
 
 export const Input = styled.input`
   width: 160px;
   height: 48px;
-  padding: 14px 24px;
+  padding: 14px 24px 14px 0;
 
   border: none;
   outline: none;
   background-color: #f7f7fb;
   border-right: 1px solid rgba(138, 138, 137, 0.2);
 
-  &:first-child {
-    border-radius: 14px 0 0 14px;
-  }
-
-  &:last-child {
-    border-radius: 0 14px 14px 0;
-  }
-
-  ::placeholder {
-    font-family: 'Manrope';
-    font-weight: 600;
-    color: black;
-  }
+  font-family: 'Manrope';
+  font-weight: 600;
 `;
 
 export const Icon = styled(BsChevronDown)`

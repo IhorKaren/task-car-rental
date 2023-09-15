@@ -2,10 +2,12 @@ import { useState } from 'react';
 import {
   Form,
   Label,
+  InputLabel,
   Thumb,
   Select,
   SelectPrice,
   InputThumb,
+  InputWrap,
   Input,
   Icon,
   Button,
@@ -51,10 +53,26 @@ const Filter = ({ onSubmit }) => {
         <Icon />
       </Thumb>
       <Thumb>
-        <Label htmlFor="mileage">Car mileage / km</Label>
+        <Label>Car mileage / km</Label>
         <InputThumb>
-          <Input type="text" name="mileageFrom" placeholder="From" />
-          <Input type="text" name="mileageTo" placeholder="To" />
+          <InputWrap>
+            <Input
+              type="text"
+              name="mileageFrom"
+              id="mileageFrom"
+              style={{ paddingLeft: '64px', borderRadius: '14px 0 0 14px' }}
+            />
+            <InputLabel htmlFor="mileageFrom">From</InputLabel>
+          </InputWrap>
+          <InputWrap>
+            <Input
+              type="text"
+              name="mileageTo"
+              id="mileageTo"
+              style={{ paddingLeft: '44px', borderRadius: '0 14px 14px 0' }}
+            />
+            <InputLabel htmlFor="mileageTo">To</InputLabel>
+          </InputWrap>
         </InputThumb>
       </Thumb>
       <Button type="submit" onClick={e => onFormSubmit(e)}>
