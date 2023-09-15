@@ -3,7 +3,7 @@ import { BsChevronDown } from 'react-icons/bs';
 
 export const Form = styled.form`
   display: flex;
-  max-width: 1140px;
+  flex-wrap: wrap;
   gap: 18px;
   margin-left: auto;
   margin-right: auto;
@@ -24,6 +24,11 @@ export const Thumb = styled.div`
   position: relative;
   display: inline-flex;
   flex-direction: column;
+`;
+
+export const InputThumb = styled.div`
+  display: flex;
+
 `;
 
 export const Select = styled.select`

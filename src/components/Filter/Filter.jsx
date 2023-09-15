@@ -5,6 +5,7 @@ import {
   Thumb,
   Select,
   SelectPrice,
+  InputThumb,
   Input,
   Icon,
   Button,
@@ -51,10 +52,10 @@ const Filter = ({ onSubmit }) => {
       </Thumb>
       <Thumb>
         <Label htmlFor="mileage">Car mileage / km</Label>
-        <div>
+        <InputThumb>
           <Input type="text" name="mileageFrom" placeholder="From" />
           <Input type="text" name="mileageTo" placeholder="To" />
-        </div>
+        </InputThumb>
       </Thumb>
       <Button type="submit" onClick={e => onFormSubmit(e)}>
         Search
