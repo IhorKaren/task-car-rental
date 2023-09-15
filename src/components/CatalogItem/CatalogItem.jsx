@@ -8,6 +8,7 @@ import {
   TitleThumb,
   CardTitle,
   Accent,
+  Price,
   TagList,
   TagItem,
   Button,
@@ -80,6 +81,8 @@ const CatalogItem = ({ car }) => {
   const city = address[1];
   const country = address[2];
 
+  const isIconBlue = isFavorite || checkLocation;
+
   return (
     <>
       <Card>
@@ -87,14 +90,20 @@ const CatalogItem = ({ car }) => {
           <ImageThumb>
             <Image src={car.img} alt={`${car.make} ${car.model}`} />
           </ImageThumb>
-          <FavoriteButton type="button" onClick={() => favoriteItemToggle(car)}>
-            <Icon fill={isFavorite || checkLocation ? '#3470ff' : '#ffffff'} />
+          <FavoriteButton
+            type="button"
+            onClick={() => favoriteItemToggle(car)}
+            style={{
+              fill: isIconBlue && '#3470ff',
+            }}
+          >
+            <Icon />
           </FavoriteButton>
           <TitleThumb>
             <CardTitle>
               {car.make} <Accent>{car.model}</Accent>, {car.year}
             </CardTitle>
-            <p>{car.rentalPrice}</p>
+            <Price>{car.rentalPrice}</Price>
           </TitleThumb>
           <TagList>
             <TagItem>

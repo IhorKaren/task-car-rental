@@ -27,12 +27,20 @@ export const FavoriteButton = styled.button`
 
   transition: fill 250ms linear;
 
+  fill: #ffffff;
+
   cursor: pointer;
+
+  &:hover {
+    fill: #3470ff;
+  }
 `;
 
 export const Icon = styled(BsHeartFill)`
   width: 20px;
   height: 20px;
+
+  fill: inherit;
 `;
 
 export const ImageThumb = styled.div`
@@ -69,6 +77,13 @@ export const CardTitle = styled.h2`
 
 export const Accent = styled.span`
   color: #3470ff;
+`;
+
+export const Price = styled.p`
+  font-family: 'Manrope';
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
 `;
 
 export const TagList = styled.ul`

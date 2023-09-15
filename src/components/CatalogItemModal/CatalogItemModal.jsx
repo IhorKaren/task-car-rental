@@ -18,6 +18,18 @@ import {
 const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
   const rentalConditions = el.rentalConditions.split('\n');
 
+  const numberFinder = string => {
+    const searchNumber = string.split('\n')[0].slice(-2);
+    const parsedNumber = parseInt(searchNumber);
+    const isNumber = Number.isNaN(parsedNumber);
+
+    if (!isNumber) {
+      return parsedNumber;
+    }
+
+    return false;
+  };
+
   return (
     <Container>
       <CloseModal
@@ -70,16 +82,27 @@ const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
         <div>
           <Text>Rental Conditions: </Text>
           <ConditionList>
-            {rentalConditions.map((condition, index) => (
-              <ConditionItem key={index}>
-                <p>{condition}</p>
-              </ConditionItem>
-            ))}
+            {rentalConditions.map((condition, index) => {
+              const searchAge = numberFinder(condition);
+
+              return (
+                <ConditionItem key={index}>
+                  <p>
+                    {condition.replace(`${searchAge}`, '')}
+                    {searchAge && <Accent>{searchAge}</Accent>}
+                  </p>
+                </ConditionItem>
+              );
+            })}
             <ConditionItem>
-              <p>Milage: {addComma(el.mileage)}</p>
+              <p>
+                Milage: <Accent>{addComma(el.mileage)}</Accent>
+              </p>
             </ConditionItem>
             <ConditionItem>
-              <p>Price: {el.rentalPrice}</p>
+              <p>
+                Price: <Accent>{el.rentalPrice}</Accent>
+              </p>
             </ConditionItem>
           </ConditionList>
         </div>

@@ -14,7 +14,9 @@ import {
 } from './Filter.styled';
 import makesList from 'resources/makes';
 
-const prices = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+const prices = [
+  10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600,
+];
 
 const Filter = ({ onSubmit }) => {
   const [choosenBrand, setChoosenBrand] = useState();
@@ -42,7 +44,7 @@ const Filter = ({ onSubmit }) => {
       </Thumb>
       <Thumb>
         <Label htmlFor="price-select">Price/ 1 hour</Label>
-        <SelectPrice name="price" id="price-select" onChange={setChoosenBrand}>
+        <SelectPrice name="price" id="price-select">
           <option value="without">To $</option>
           {prices.map((el, index) => (
             <option key={index} value={el}>

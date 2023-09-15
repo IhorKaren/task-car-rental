@@ -68,6 +68,8 @@ export const ModalTitle = styled.h3`
 
 export const Accent = styled.span`
   color: #3470ff;
+
+  font-weight: 600;
 `;
 
 export const TagList = styled.ul`
@@ -105,7 +107,7 @@ export const Decription = styled.p`
   max-width: 440px;
 
   font-family: 'Manrope';
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.42;
 `;
@@ -113,8 +115,6 @@ export const Decription = styled.p`
 export const Text = styled.p`
   margin-bottom: 8px;
 
-  font-family: 'Manrope';
-  font-weight: 600;
   font-size: 14px;
   line-height: 1.42;
 `;
@@ -135,7 +135,7 @@ export const ConditionItem = styled.li`
   border-radius: 35px;
 
   font-family: 'Manrope';
-  font-weight: 600;
+  font-weight: 500;
   font-size: 12px;
   line-height: 1.5;
 
