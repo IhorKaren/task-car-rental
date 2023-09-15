@@ -71,6 +71,7 @@ export const Input = styled.input`
 
   border: none;
   outline: none;
+  background-color: #f7f7fb;
   border-right: 1px solid rgba(138, 138, 137, 0.2);
 
   &:first-child {
