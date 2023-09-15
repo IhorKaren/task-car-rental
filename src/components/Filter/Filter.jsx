@@ -60,7 +60,7 @@ const Filter = ({ onSubmit }) => {
               type="text"
               name="mileageFrom"
               id="mileageFrom"
-              style={{ paddingLeft: '64px', borderRadius: '14px 0 0 14px' }}
+              style={{ paddingLeft: '60px', borderRadius: '14px 0 0 14px' }}
             />
             <InputLabel htmlFor="mileageFrom">From</InputLabel>
           </InputWrap>
