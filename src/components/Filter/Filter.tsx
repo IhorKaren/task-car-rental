@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FC, FormEvent, ChangeEvent, MouseEvent } from 'react';
 import {
   Form,
   Label,
@@ -18,13 +18,18 @@ const prices = [
   10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600,
 ];
 
-const Filter = ({ onSubmit }) => {
-  const [choosenBrand, setChoosenBrand] = useState();
+type FilterProps = {
+  onSubmit: (brand: string) => void;
+};
 
-  const onFormSubmit = e => {
+const Filter: FC<FilterProps> = ({ onSubmit }) => {
+  const [choosenBrand, setChoosenBrand] = useState<string>('without');
+
+  const onFormSubmit = (e: FormEvent<HTMLButtonElement>): void => {
     e.preventDefault();
 
-    onSubmit(choosenBrand.target.value);
+    onSubmit(choosenBrand);
+
     return;
   };
 
@@ -32,7 +37,13 @@ const Filter = ({ onSubmit }) => {
     <Form>
       <Thumb>
         <Label htmlFor="car-select">Car brand</Label>
-        <Select name="cars" id="car-select" onChange={setChoosenBrand}>
+        <Select
+          name="cars"
+          id="car-select"
+          onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+            setChoosenBrand(e.target.value)
+          }
+        >
           <option value="without">All cars</option>
           {makesList.map((el, index) => (
             <option key={index} value={el}>
@@ -77,7 +88,10 @@ const Filter = ({ onSubmit }) => {
           </InputWrap>
         </InputThumb>
       </Thumb>
-      <Button type="submit" onClick={e => onFormSubmit(e)}>
+      <Button
+        type="submit"
+        onClick={(e: MouseEvent<HTMLButtonElement>) => onFormSubmit(e)}
+      >
         Search
       </Button>
     </Form>

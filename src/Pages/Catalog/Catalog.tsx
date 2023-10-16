@@ -5,10 +5,12 @@ import Filter from 'components/Filter/Filter';
 import CatalogList from 'components/CatalogList/CatalogList';
 import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 
+import { Car } from 'components/App.types';
+
 const Catalog = () => {
   const [page, setPage] = useState(1);
-  const [carsList, setCarsList] = useState([]);
-  const [filteredCars, setFilteredCars] = useState([]);
+  const [carsList, setCarsList] = useState<Car[]>([]);
+  const [filteredCars, setFilteredCars] = useState<Car[]>([]);
   const [isFirstRender, setIsFirstRender] = useState(true);
   const [brand, setBrand] = useState('without');
 
@@ -39,11 +41,11 @@ const Catalog = () => {
   }, [data, isFirstRender]);
 
   useEffect(() => {
-    const list = document.querySelector('ul');
-    const lastImage = list.lastElementChild;
+    const list: HTMLUListElement = document.querySelector('ul')!;
+    const lastItem: HTMLLIElement = list.lastElementChild as HTMLLIElement;
 
     if (carsList.length > 8) {
-      const { height: cardHeight } = lastImage.getBoundingClientRect();
+      const { height: cardHeight } = lastItem.getBoundingClientRect();
 
       window.scrollBy({
         top: cardHeight * 1,
@@ -56,7 +58,7 @@ const Catalog = () => {
     setPage(prevPage => prevPage + 1);
   };
 
-  const onFilterSubmit = brand => {
+  const onFilterSubmit = (brand: string): void => {
     if (brand === 'without') {
       setFilteredCars([]);
       setCarsList([...data]);

@@ -1,12 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, FC, ReactNode, MouseEvent } from 'react';
 import { createPortal } from 'react-dom';
 import { Overlay, Modal } from './Modal.styled';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot: HTMLElement | null = document.querySelector('#modal-root');
 
-const PageModal = ({ closeModal, children }) => {
+type ModalProps = {
+  closeModal: () => void;
+  children: ReactNode;
+};
+
+const PageModal: FC<ModalProps> = ({ closeModal, children }) => {
   useEffect(() => {
-    const handleKeyDown = e => {
+    const handleKeyDown = (e: KeyboardEvent): void => {
       if (e.code === 'Escape') {
         closeModal();
       }
@@ -19,7 +24,7 @@ const PageModal = ({ closeModal, children }) => {
     };
   }, [closeModal]);
 
-  const handleBackdropClick = e => {
+  const handleBackdropClick = (e: MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget === e.target) {
       closeModal();
     }
@@ -29,7 +34,7 @@ const PageModal = ({ closeModal, children }) => {
     <Overlay onClick={handleBackdropClick}>
       <Modal>{children}</Modal>
     </Overlay>,
-    modalRoot
+    modalRoot as HTMLElement
   );
 };
 

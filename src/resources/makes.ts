@@ -1,4 +1,4 @@
-const makesList = [
+const makesList: string[] = [
   'Buick',
   'Volvo',
   'HUMMER',

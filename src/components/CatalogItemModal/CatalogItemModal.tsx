@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import {
   Container,
   CloseModal,
@@ -13,12 +14,28 @@ import {
   ConditionList,
   ConditionItem,
   Button,
-} from '../CatalogItemModal/CatalogItemModal.styled';
+} from './CatalogItemModal.styled';
 
-const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
+import { Car } from 'components/App.types';
+
+type ItemModalProps = {
+  el: Car;
+  city: string;
+  country: string;
+  addComma: (number: number) => string;
+  closeModal: () => void;
+};
+
+const CatalogItemModal: FC<ItemModalProps> = ({
+  el,
+  city,
+  country,
+  addComma,
+  closeModal,
+}) => {
   const rentalConditions = el.rentalConditions.split('\n');
 
-  const numberFinder = string => {
+  const numberFinder = (string: string): number => {
     const searchNumber = string.split('\n')[0].slice(-2);
     const parsedNumber = parseInt(searchNumber);
     const isNumber = Number.isNaN(parsedNumber);
@@ -27,7 +44,7 @@ const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
       return parsedNumber;
     }
 
-    return false;
+    return NaN;
   };
 
   return (

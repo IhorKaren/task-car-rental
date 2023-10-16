@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import {
   Card,
   FavoriteButton,
@@ -23,7 +23,13 @@ import { useLocation } from 'react-router-dom';
 import PageModal from 'components/Modal/Modal';
 import CatalogItemModal from 'components/CatalogItemModal/CatalogItemModal';
 
-const CatalogItem = ({ car }) => {
+import { Car } from 'components/App.types';
+
+type ItemProps = {
+  car: Car;
+};
+
+const CatalogItem: FC<ItemProps> = ({ car }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const { data = [] } = useGetFavoritesQuery();
@@ -56,11 +62,11 @@ const CatalogItem = ({ car }) => {
     setModalOpen(false);
   };
 
-  const addCommaToNumber = number => {
+  const addCommaToNumber = (number: number): string => {
     return number.toLocaleString('en-US');
   };
 
-  const favoriteItemToggle = favorite => {
+  const favoriteItemToggle = (favorite: Car): void => {
     if (checkLocation) {
       removeFromFavorites(favorite.id);
       return;
@@ -94,7 +100,7 @@ const CatalogItem = ({ car }) => {
             type="button"
             onClick={() => favoriteItemToggle(car)}
             style={{
-              fill: isIconBlue && '#3470ff',
+              fill: isIconBlue ? '#3470ff' : '#FFFFFF',
             }}
           >
             <Icon />

@@ -1,5 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+import { Car } from 'components/App.types';
+
+type SearchParams = { page: number; limit: number; brand?: string };
+
 export const carsApi = createApi({
   reducerPath: 'carsApi',
   baseQuery: fetchBaseQuery({
@@ -7,20 +11,20 @@ export const carsApi = createApi({
   }),
   tagTypes: ['Cars', 'Favorites'],
   endpoints: builder => ({
-    getCars: builder.query({
+    getCars: builder.query<Car[], SearchParams>({
       query: ({ page, limit }) => `advert/?p=${page}&l=${limit}`,
       providesTags: ['Cars'],
     }),
-    getCarsByBrand: builder.query({
+    getCarsByBrand: builder.query<Car[], SearchParams>({
       query: ({ page, limit, brand }) =>
         `advert/?make=${brand}&p=${page}&l=${limit}`,
       providesTags: ['Cars'],
     }),
-    getFavorites: builder.query({
+    getFavorites: builder.query<Car[], void>({
       query: () => `favorites`,
       providesTags: ['Favorites'],
     }),
-    addToFavorites: builder.mutation({
+    addToFavorites: builder.mutation<Car[], Car>({
       query: data => ({
         url: `favorites`,
         method: 'POST',
@@ -28,7 +32,7 @@ export const carsApi = createApi({
       }),
       invalidatesTags: ['Favorites'],
     }),
-    removeFromFavorites: builder.mutation({
+    removeFromFavorites: builder.mutation<Car[], number>({
       query: id => ({
         url: `favorites/${id}`,
         method: 'DELETE',
